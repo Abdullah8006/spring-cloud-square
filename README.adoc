@@ -34,11 +34,13 @@ Then create a `@LoadBalanced`-annotated `OkHttpClient.Builder` bean:
 ----
 @Configuration
 class OkHttpClientConfig{
-@Bean
-@LoadBalanced
-public OkHttpClient.Builder okHttpClientBuilder() {
-    return new OkHttpClient.Builder();
+    
+	@Bean
+	@LoadBalanced
+	public OkHttpClient.Builder okHttpClientBuilder() {
+    	return new OkHttpClient.Builder();
     }
+
 }
 ----
 
@@ -79,11 +81,12 @@ Use the `@EnableRetrofitClients` annotation to let us automatically instantiate 
 @EnableRetrofitClients
 class OkHttpClientConfig {
 
-@Bean
-@LoadBalanced
-public OkHttpClient.Builder okHttpClientBuilder() {
-    return new OkHttpClient.Builder();
+	@Bean
+	@LoadBalanced
+	public OkHttpClient.Builder okHttpClientBuilder() {
+    	return new OkHttpClient.Builder();
     }
+
 }
 ----
 
@@ -111,6 +114,7 @@ class AService {
     public String hello() throws IOException {
         return client.hello().execute().body();
     }
+
 }
 ----
 
@@ -143,11 +147,12 @@ Use the `@EnableRetrofitClients` annotation to let us automatically instantiate 
 @EnableRetrofitClients
 class OkHttpClientConfig {
 
-@Bean
-@LoadBalanced
-public WebClient.Builder okHttpClientBuilder() {
-    return WebClient.builder();
+	@Bean
+	@LoadBalanced
+	public WebClient.Builder okHttpClientBuilder() {
+    	return WebClient.builder();
     }
+
 }
 ----
 
@@ -175,6 +180,7 @@ class AService {
     public String hello() throws IOException {
         return client.hello();
     }
+
 }
 ----
 
